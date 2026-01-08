@@ -1,0 +1,12 @@
+User (1) —— (1) PatientProfile
+User (1) —— (1) DoctorProfile
+
+DoctorProfile (1) —— (N) AvailabilitySlot
+DoctorProfile (1) —— (N) CaseHistory
+
+PatientProfile (1) —— (N) MedicalRequest
+MedicalRequest (1) —— (1) AllocationDecision
+
+AllocationDecision (1) —— (N) NotificationEvent
+
+All Entities —— (N) AuditLog
