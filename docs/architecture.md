@@ -60,3 +60,11 @@
 - Tests
 - Deployments
 - Logs & metrics
+
+### Redis
+- Real-time doctor availability
+- Allocation locking
+- Notification queue
+- Rate limiting
+- Short-lived caching
+

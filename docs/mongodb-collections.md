@@ -29,5 +29,10 @@ doctor_profiles:
 medical_requests:
 - vector index on symptoms_embedding
 
+NOTE:
+MongoDB stores persistent truth.
+Redis stores ephemeral, real-time system state.
+
+
 
 
