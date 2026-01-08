@@ -20,4 +20,14 @@
 - Referenced from doctor_profiles
 - Reason: Large growth, analytics use
 
+### Indexes
+
+doctor_profiles:
+- 2dsphere index on location
+- vector index on expertise_embedding
+
+medical_requests:
+- vector index on symptoms_embedding
+
+
 
