@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-const { signToken } = require('../utils/jwt');
+const { generateToken } = require('../utils/jwt');
 
 exports.registerUser = async (req, res) => {
   try {
@@ -74,7 +74,7 @@ exports.loginUser = async (req, res) => {
       });
     }
 
-    const token = signToken({
+    const token = generateToken({
       userId: user._id,
       role: user.role
     });
