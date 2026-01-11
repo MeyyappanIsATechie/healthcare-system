@@ -16,6 +16,7 @@ require("./config/passport");
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/userRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 const app = express();
 
@@ -45,6 +46,8 @@ const startServer = async () => {
 
     app.use("/auth", authRoutes);
     app.use("/api/v1/users", userRoutes);
+    app.use("/api/v1/profiles", profileRoutes);
+
 
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
