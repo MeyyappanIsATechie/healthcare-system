@@ -11,7 +11,7 @@ const markDoctorAvailable = async (doctorId, lng, lat) => {
 
 const markDoctorUnavailable = async (doctorId) => {
   await redis.sRem("doctors:available", doctorId);
-  await redis.zRem("doctors:geo", doctorId);
+  await redis.geoRemove("doctors:geo", doctorId);;
 };
 
 const incrementDoctorLoad = async (doctorId) => {
