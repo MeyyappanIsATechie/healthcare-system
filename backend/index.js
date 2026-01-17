@@ -18,6 +18,10 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/userRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 const doctorAvailabilityRoutes = require("./routes/doctorAvailabilityRoutes");
+const requestId = require("./middleware/requestId");
+const errorHandler = require("./middleware/errorHandler");
+
+
 
 const app = express();
 
@@ -30,6 +34,8 @@ app.use(mongoSanitize());
 app.use(xss());
 app.use(helmet());
 app.use(passport.initialize());
+app.use(requestId);
+app.use(errorHandler);
 
 // ─────────────────────────────
 // Bootstrap function (NO top-level await)

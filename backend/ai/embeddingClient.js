@@ -1,0 +1,1 @@
+async function generateEmbedding(text) {}
