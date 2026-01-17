@@ -20,6 +20,7 @@ const profileRoutes = require("./routes/profileRoutes");
 const doctorAvailabilityRoutes = require("./routes/doctorAvailabilityRoutes");
 const requestId = require("./middleware/requestId");
 const errorHandler = require("./middleware/errorHandler");
+const medicalRequestRoutes = require("./routes/medicalRequestRoutes");
 
 
 
@@ -55,6 +56,7 @@ const startServer = async () => {
     app.use("/api/v1/users", userRoutes);
     app.use("/api/v1/profiles", profileRoutes);
     app.use("/api/v1/doctors/availability", doctorAvailabilityRoutes);
+    app.use("/api/v1/requests", medicalRequestRoutes);
 
 
 
