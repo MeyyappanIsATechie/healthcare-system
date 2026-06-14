@@ -1,4 +1,4 @@
-const redis = require("../config/redis");
+const { redisClient: redis } = require("../config/redis");
 
 const markDoctorAvailable = async (doctorId, lng, lat) => {
   await redis.sAdd("doctors:available", doctorId);
@@ -11,7 +11,7 @@ const markDoctorAvailable = async (doctorId, lng, lat) => {
 
 const markDoctorUnavailable = async (doctorId) => {
   await redis.sRem("doctors:available", doctorId);
-  await redis.geoRemove("doctors:geo", doctorId);;
+  await redis.geoRemove("doctors:geo", doctorId);
 };
 
 const incrementDoctorLoad = async (doctorId) => {

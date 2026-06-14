@@ -9,12 +9,12 @@ const createMedicalRequest = async (req, res, next) => {
 
     logger.info("Incoming medical request", {
       requestId: req.requestId,
-      patientId: req.user.id,
+      patientId: req.user.userId,
     });
 
     // 1. Persist request first (source of truth)
     const request = await MedicalRequest.create({
-      patientId: req.user.id,
+      patientId: req.user.userId,
       symptomsText,
       location: {
         type: "Point",
